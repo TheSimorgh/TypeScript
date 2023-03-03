@@ -1,0 +1,40 @@
+npm i typescript -g
+
+
+to compile ts into js type: tsc main.ts
+tsc main.ts -w  : watches any changes in this file 
+typescript config file: tsc --init
+custom setting root outdir directions
+buy chaging target es2006 we can change javascript version
+trager:"es20016 or es5"
+if we delete the ts file it will not automaticall delete compiled js file in order to elimenate bothe files simultanouslt we need to change settingng
+
+
+open typ conmfig athe end add   "include": [
+    "src"
+  ] it will ignore auto creating js file inside the source folder
+
+  onEmit true willnot create compiled js file if there is error in ts file
+
+  tsc --noEmitOnError -w
+
+  ///////////////////////////////
+  Programming languages divides into types Strongly typed and loosely(weekly) types
+  -Strongly Typed Langugages : Demand the specification of types
+  typesctipt is Strongly typed language and it specify the types of data 
+  -Loosely typed lkanguages :Ldo not require type specification
+
+  Static and Dynamic typing
+
+  language that is strongly typed ca be eithe statically or dynamically typed
+  TypesScript is a statically typed language this means types are checked at compile time
+  JavaScript is dynamically typed language means typesas are checked at run time
+
+  Pros Typescript 
+  -catch erros in dev!
+  -great for teams
+  -self-docuemntating
+
+  implicit  let userName ="Jo"; when we mose over on it is will tell us its type is string 
+
+  explicit saying let userName : string="Jo";
