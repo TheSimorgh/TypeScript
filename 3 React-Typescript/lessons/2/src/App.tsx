@@ -4,6 +4,7 @@ import { MouseEvent, KeyboardEvent } from "react";
 import Counter2 from "./components/Counter2";
 import Counter from "./components/Counter";
 import Counter3 from "./components/Counter3";
+import { CounterProvider } from "./context/CounterContext";
 interface User {
   id: number;
   username: string;
@@ -58,28 +59,29 @@ function App() {
 
   return (
     <>
-      <h4>{count}</h4>
-      <div>
-        <button onClick={() => setCount((prev) => prev + 1)}>Add</button>
-        <button onClick={() => setCount((prev) => prev - 1)}>Remove</button>
-      </div>
-      <div>
-        {/* {resultFunc}
+      <CounterProvider>
+        <h4>{count}</h4>
+        <div>
+          <button onClick={() => setCount((prev) => prev + 1)}>Add</button>
+          <button onClick={() => setCount((prev) => prev - 1)}>Remove</button>
+        </div>
+        <div>
+          {/* {resultFunc}
         {resultFunc2} */}
-        <button onClick={addFun}>Add</button>
-        <button onClick={decFun}>Remove</button>
-        <button onClick={resFun}>Res</button>
-      </div>
-      <input ref={inputRef} type="text" />
-      <input type="text" />
+          <button onClick={addFun}>Add</button>
+          <button onClick={decFun}>Remove</button>
+          <button onClick={resFun}>Res</button>
+        </div>
+        <input ref={inputRef} type="text" />
+        <input type="text" />
 
-      <h1>Counter 3 </h1>
-      <Counter setCount={setCount3}>{count3} </Counter>
+        <h1>Counter 3 </h1>
+        <Counter setCount={setCount3}>{count3} </Counter>
 
-      <h1>Counter 2 </h1>
-      <Counter2 title={"Counter 2"}>Counter2</Counter2>
-      <Counter3>{(num: number) => <>Current Count: {num}</>}</Counter3>
-
+        <h1>Counter 2 </h1>
+        <Counter2 title={"Counter 2"}>Counter2</Counter2>
+        <Counter3>{(num: number) => <>Current Count: {num}</>}</Counter3>
+      </CounterProvider>
     </>
   );
 }

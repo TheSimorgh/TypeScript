@@ -1,0 +1,1 @@
+npx json-server -w data/products -p 3500
